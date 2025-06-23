@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Simula el impuesto 4x1000 (GMF) en Colombia. Calculadora rápida y gratuita que muestra cuánto enviar o recibir en transacciones bancarias."
+    />
+    <meta
+      name="keywords"
+      content="4x1000 calculadora, calculadora 4x1000, impuesto 4x1000, GMF Colombia, simulador bancario, calcular impuesto bancario, transferencia bancaria Colombia, cuánto enviar para recibir, cuánto me descuentan, impuesto financiero Colombia, finanzas personales Colombia"
+    />
+    <meta name="author" content="Alexpiral" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="es" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:site_name" content="Calculadora 4x1000 Colombia" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://calculadora4x1000.alexpiral.com/"
+    />
+    <meta
+      property="og:title"
+      content="Calculadora 4x1000 Colombia - Calcula tu Impuesto Bancario"
+    />
+    <meta
+      property="og:description"
+      content="Herramienta gratuita para calcular el impuesto 4x1000 (GMF) en Colombia. Descubre cuánto se descuenta de tus transacciones bancarias en tiempo real."
+    />
+    <meta
+      property="og:image"
+      content="https://calculadora4x1000.alexpiral.com/images/calculadora-4x1000-preview.jpg"
+    />
+    <meta property="og:locale" content="es_CO" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:url"
+      content="https://calculadora4x1000.alexpiral.com/"
+    />
+    <meta
+      name="twitter:title"
+      content="Calculadora 4x1000 Colombia - Calcula tu Impuesto Bancario"
+    />
+    <meta
+      name="twitter:description"
+      content="Herramienta gratuita para calcular el impuesto 4x1000 (GMF) en Colombia. Descubre cuánto se descuenta de tus transacciones bancarias en tiempo real."
+    />
+    <meta
+      name="twitter:image"
+      content="https://calculadora4x1000.alexpiral.com/images/calculadora-4x1000-preview.jpg"
+    />
+
+    <title>Calculadora 4x1000 - Simula Impuesto GMF en Colombia Gratis</title>
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://calculadora4x1000.alexpiral.com/" />
+
+    <!-- Favicon -->
+    <!-- <link rel="icon" type="image/x-icon" href="/favicon.ico" /> -->
+    <!-- <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" /> -->
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/styles.css" />
+
+    <!-- Scripts -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Calculadora 4x1000 Colombia",
+        "description": "Calculadora gratuita del impuesto 4x1000 (GMF) en Colombia para transacciones bancarias",
+        "url": "https://calculadora4x1000.alexpiral.com",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web Browser",
+        "inLanguage": "es",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "COP"
+        },
+        "author": {
+          "@type": "Alexpiral",
+          "name": "Calculadora 4x1000 Colombia"
+        }
+      }
+    </script>
+    <script src="/main.js" defer></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-content">
+        <h1>Calculadora 4x1000 Colombia</h1>
+        <p class="header-subtitle">
+          Calcula el impuesto GMF de tus transacciones bancarias en tiempo real
+        </p>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <section class="calculator-card">
+        <h2 class="calculator-title">Ingresa el monto de tu transacción</h2>
+
+        <div class="input-group">
+          <label for="amount-input" class="input-label"
+            >Monto en pesos colombianos (COP)</label
+          >
+          <div class="input-wrapper">
+            <span class="currency-symbol">$</span>
+            <input
+              type="text"
+              id="amount-input"
+              class="currency-input"
+              placeholder="0"
+              aria-describedby="amount-error"
+              autocomplete="off"
+            />
+          </div>
+          <div id="amount-error" class="error-message" role="alert"></div>
+        </div>
+
+        <div id="results" class="results-section">
+          <div class="result-item discount">
+            <div class="result-label">Descuento por 4x1000</div>
+            <div class="result-value" id="discount-amount">$0</div>
+            <div class="result-description">
+              Impuesto que se descuenta automáticamente
+            </div>
+          </div>
+
+          <div class="result-item net-amount">
+            <div class="result-label">Monto neto que recibes</div>
+            <div class="result-value" id="net-amount">$0</div>
+            <div class="result-description">
+              Dinero que efectivamente llega a tu cuenta
+            </div>
+          </div>
+
+          <div class="result-item gross-amount">
+            <div class="result-label">Monto a enviar para recibir limpio</div>
+            <div class="result-value" id="gross-amount">$0</div>
+            <div class="result-description">
+              Incluye el 4x1000 para que llegue el monto exacto
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="info-section">
+        <h3 class="info-title">¿Qué es el impuesto 4x1000?</h3>
+        <p class="info-text">
+          El impuesto 4x1000, también conocido como GMF (Gravamen a los
+          Movimientos Financieros), es un tributo que se aplica en Colombia
+          sobre las transacciones financieras. Por cada $1.000 pesos que
+          manejes, se descuentan $4 pesos automáticamente.
+        </p>
+
+        <h4 class="info-title">Datos importantes sobre el 4x1000:</h4>
+        <ul class="info-list">
+          <li><strong>Tasa:</strong> 0.4% sobre el valor de la transacción</li>
+          <li>
+            <strong>Aplicación:</strong> Automática en retiros, transferencias y
+            algunos depósitos
+          </li>
+          <li>
+            <strong>Destinación:</strong> Los recursos van al presupuesto
+            nacional
+          </li>
+          <li>
+            <strong>Vigencia:</strong> Impuesto temporal que se ha prorrogado
+            varias veces
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4 class="footer-title">Calculadora 4x1000 Colombia</h4>
+          <p class="footer-text">
+            Herramienta gratuita para calcular el impuesto 4x1000 (GMF) en
+            Colombia. Información actualizada según la normativa vigente de la
+            DIAN.
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <!-- <a href="#" aria-label="Términos y condiciones"
+            >Términos y Condiciones</a
+          >
+          <a href="#" aria-label="Política de privacidad"
+            >Política de Privacidad</a
+          > -->
+          <a href="#!" id="email-link" aria-label="Contacto">Contacto</a>
+        </div>
+
+        <div class="footer-copyright">
+          <!-- <p>
+            &copy; 2025 Calculadora 4x1000 Colombia. Todos los derechos
+            reservados.
+          </p> -->
+          <p>
+            Esta herramienta es informativa. Consulta siempre con un profesional
+            financiero para decisiones importantes.
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
