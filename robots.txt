@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://calculadora4x1000.alexpiral.com/sitemap.xml
