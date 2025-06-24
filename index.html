@@ -9,11 +9,15 @@
     />
     <meta
       name="keywords"
-      content="4x1000 calculadora, calculadora 4x1000, impuesto 4x1000, GMF Colombia, simulador bancario, calcular impuesto bancario, transferencia bancaria Colombia, cuánto enviar para recibir, cuánto me descuentan, impuesto financiero Colombia, finanzas personales Colombia"
+      content="4x1000 calculadora, calculadora 4x1000, impuesto 4x1000, GMF Colombia, simulador bancario, calcular impuesto bancario, transferencia bancaria Colombia, cuánto enviar para recibir, cuánto me descuentan, impuesto financiero Colombia, finanzas personales Colombia, como calcular 4x1000, cuanto cobra el banco por 4x1000, simulador impuesto bancario, calculadora GMF DIAN, que es el 4x1000, calculo 4 por mil, impuesto transacciones financieras"
     />
     <meta name="author" content="Alexpiral" />
     <meta name="robots" content="index, follow" />
     <meta name="language" content="es" />
+    <meta name="theme-color" content="#1e40af" />
+    <meta name="msapplication-TileColor" content="#1e40af" />
+    <meta name="geo.region" content="CO" />
+    <meta name="geo.placename" content="Colombia" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:site_name" content="Calculadora 4x1000 Colombia" />
@@ -65,8 +69,9 @@
     <link rel="canonical" href="https://calculadora4x1000.alexpiral.com/" />
 
     <!-- Favicon -->
-    <!-- <link rel="icon" type="image/x-icon" href="/favicon.ico" /> -->
-    <!-- <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" /> -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="alternate icon" href="/favicon.ico" />
+    <link rel="mask-icon" href="/favicon.svg" color="#1e40af" />
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="/styles.min.css" />
@@ -111,6 +116,38 @@
         "featureList": ["Cálculo automático del 4x1000"]
       }
     </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "¿Cuánto es el impuesto 4x1000 en Colombia?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "El impuesto 4x1000 es del 0.4% sobre el valor de la transacción financiera. Por cada $1.000 pesos colombianos se descuentan $4 pesos automáticamente."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Cómo se calcula el 4x1000?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Se calcula multiplicando el monto de la transacción por 0.004 (0.4%). Ejemplo: $100.000 x 0.004 = $400 de impuesto."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Qué transacciones pagan 4x1000?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Retiros de cuentas corrientes y de ahorros, transferencias entre cuentas de diferentes titulares, y algunos depósitos según la normativa de la DIAN."
+            }
+          }
+        ]
+      }
+    </script>
     <script src="/main.min.js" defer></script>
   </head>
   <body>
@@ -123,9 +160,12 @@
       </div>
     </header>
 
-    <main class="main-content">
-      <section class="calculator-card">
-        <h2 class="calculator-title">Ingresa el monto de tu transacción</h2>
+    <main id="main-content" class="main-content">
+      <article class="calculator-card">
+        <header class="calculator-header">
+          <h2 class="calculator-title">Ingresa el monto de tu transacción</h2>
+        </header>
+        <section class="calculation-form">
 
         <div class="input-group">
           <label for="amount-input" class="input-label"
@@ -134,7 +174,9 @@
           <div class="input-wrapper">
             <span class="currency-symbol">$</span>
             <input
-              type="text"
+              type="number"
+              inputmode="numeric"
+              pattern="[0-9]*"
               id="amount-input"
               class="currency-input"
               placeholder="0"
@@ -170,9 +212,10 @@
             </div>
           </div>
         </div>
-      </section>
+        </section>
+      </article>
 
-      <section class="info-section">
+      <article class="info-section">
         <h3 class="info-title">¿Qué es el impuesto 4x1000?</h3>
         <p class="info-text">
           El impuesto 4x1000, también conocido como GMF (Gravamen a los
@@ -197,7 +240,7 @@
             varias veces
           </li>
         </ul>
-      </section>
+      </article>
     </main>
 
     <footer class="footer">

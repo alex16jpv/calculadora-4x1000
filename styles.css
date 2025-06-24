@@ -348,6 +348,12 @@ body {
   }
 }
 
+
+/* Calculator header */
+.calculator-header {
+  margin-bottom: 1.5rem;
+}
+
 /* Focus indicators for keyboard navigation */
 .currency-input:focus,
 .footer-links a:focus {
