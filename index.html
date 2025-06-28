@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QQPQGYYXXP"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-QQPQGYYXXP"
+    ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-      gtag('config', 'G-QQPQGYYXXP');
+      gtag("config", "G-QQPQGYYXXP");
     </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -174,52 +179,51 @@
           <h2 class="calculator-title">Ingresa el monto de tu transacción</h2>
         </header>
         <section class="calculation-form">
-
-        <div class="input-group">
-          <label for="amount-input" class="input-label"
-            >Monto en pesos colombianos (COP)</label
-          >
-          <div class="input-wrapper">
-            <span class="currency-symbol">$</span>
-            <input
-              type="number"
-              inputmode="numeric"
-              pattern="[0-9]*"
-              id="amount-input"
-              class="currency-input"
-              placeholder="0"
-              aria-describedby="amount-error"
-              autocomplete="off"
-            />
+          <div class="input-group">
+            <label for="amount-input" class="input-label"
+              >Monto en pesos colombianos (COP)</label
+            >
+            <div class="input-wrapper">
+              <span class="currency-symbol">$</span>
+              <input
+                type="number"
+                inputmode="numeric"
+                pattern="[0-9]*"
+                id="amount-input"
+                class="currency-input"
+                placeholder="0"
+                aria-describedby="amount-error"
+                autocomplete="off"
+              />
+            </div>
+            <div id="amount-error" class="error-message" role="alert"></div>
           </div>
-          <div id="amount-error" class="error-message" role="alert"></div>
-        </div>
 
-        <div id="results" class="results-section">
-          <div class="result-item discount">
-            <div class="result-label">Descuento por 4x1000</div>
-            <div class="result-value" id="discount-amount">$0</div>
-            <div class="result-description">
-              Impuesto que se descuenta automáticamente
+          <div id="results" class="results-section">
+            <div class="result-item discount">
+              <div class="result-label">Descuento por 4x1000</div>
+              <div class="result-value" id="discount-amount">$0</div>
+              <div class="result-description">
+                Impuesto que se descuenta automáticamente
+              </div>
+            </div>
+
+            <div class="result-item net-amount">
+              <div class="result-label">Monto neto que recibes</div>
+              <div class="result-value" id="net-amount">$0</div>
+              <div class="result-description">
+                Dinero que efectivamente llega a tu cuenta
+              </div>
+            </div>
+
+            <div class="result-item gross-amount">
+              <div class="result-label">Monto a enviar para recibir limpio</div>
+              <div class="result-value" id="gross-amount">$0</div>
+              <div class="result-description">
+                Incluye el 4x1000 para que llegue el monto exacto
+              </div>
             </div>
           </div>
-
-          <div class="result-item net-amount">
-            <div class="result-label">Monto neto que recibes</div>
-            <div class="result-value" id="net-amount">$0</div>
-            <div class="result-description">
-              Dinero que efectivamente llega a tu cuenta
-            </div>
-          </div>
-
-          <div class="result-item gross-amount">
-            <div class="result-label">Monto a enviar para recibir limpio</div>
-            <div class="result-value" id="gross-amount">$0</div>
-            <div class="result-description">
-              Incluye el 4x1000 para que llegue el monto exacto
-            </div>
-          </div>
-        </div>
         </section>
       </article>
 
