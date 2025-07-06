@@ -40,15 +40,17 @@ class TaxCalculator {
   }
 
   handlePaste(event) {
-    event.preventDefault();
     const pastedText = (event.clipboardData || window.clipboardData).getData(
       "text"
     );
     const numericValue = this.extractNumericValue(pastedText);
 
     if (numericValue !== null) {
-      this.amountInput.value = this.formatCurrency(numericValue);
-      this.calculateTaxes(numericValue);
+      // Allow natural paste behavior but update with formatted value
+      setTimeout(() => {
+        this.amountInput.value = this.formatCurrency(numericValue);
+        this.calculateTaxes(numericValue);
+      }, 0);
     }
   }
 
